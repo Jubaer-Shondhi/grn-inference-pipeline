@@ -365,7 +365,7 @@ def main():
     print("\n5. Generating top objectives bar charts...")
     plot_top_objectives_bar(df, figures_dir)
     
-    print(f"\n✅ All plots saved to: {figures_dir}")
+    print(f"\nAll plots saved to: {figures_dir}")
 
 if __name__ == "__main__":
     # Define objective mapping here for use in functions

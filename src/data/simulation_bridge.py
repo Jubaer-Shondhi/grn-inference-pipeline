@@ -253,13 +253,13 @@ class RSimulationBridge:
             logger.info(f"{'='*50}")
             
             # DEBUG LINES
-            logger.info(f"🔍 DEBUG - complexity key: '{complexity}'")
-            logger.info(f"🔍 DEBUG - complexity type: {type(complexity)}")
-            logger.info(f"🔍 DEBUG - params: {params}")
-            logger.info(f"🔍 DEBUG - base_output_dir: {base_output_dir}")
+            logger.info(f"DEBUG - complexity key: '{complexity}'")
+            logger.info(f"DEBUG - complexity type: {type(complexity)}")
+            logger.info(f"DEBUG - params: {params}")
+            logger.info(f"DEBUG - base_output_dir: {base_output_dir}")
             
             output_dir = Path(base_output_dir) / complexity
-            logger.info(f"🔍 DEBUG - constructed output_dir: {output_dir}")
+            logger.info(f"DEBUG - constructed output_dir: {output_dir}")
             
             output_dir.mkdir(parents=True, exist_ok=True)
             
@@ -291,9 +291,9 @@ class RSimulationBridge:
             }
             
             if success:
-                logger.info(f"✅ Successfully generated {complexity} datasets")
+                logger.info(f"Successfully generated {complexity} datasets")
             else:
-                logger.error(f"❌ Failed to generate {complexity} datasets")
+                logger.error(f"Failed to generate {complexity} datasets")
         
         total_elapsed = time.time() - total_start
         logger.info(f"\nTotal simulation time: {total_elapsed/60:.1f} minutes")

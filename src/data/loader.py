@@ -30,7 +30,7 @@ class DataLoader:
             gex_data = pd.read_csv(gex_path, sep='\t', index_col=0)
             ground_truth = pd.read_csv(gt_path, sep='\t')
             
-            logger.info(f"✅ Loaded {data_trial}")
+            logger.info(f"Loaded {data_trial}")
             return gex_data, ground_truth, data_trial
             
         except Exception as e:

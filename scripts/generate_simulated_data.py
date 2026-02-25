@@ -119,9 +119,9 @@ Examples:
             )
             
             if verified:
-                logger.info(f"✅ {comp_name}: Verified")
+                logger.info(f"{comp_name}: Verified")
             else:
-                logger.error(f"❌ {comp_name}: Verification failed")
+                logger.error(f"{comp_name}: Verification failed")
                 all_verified = False
         
         sys.exit(0 if all_verified else 1)
@@ -147,16 +147,16 @@ Examples:
         
         all_successful = True
         for complexity, result in results.items():
-            status = "✅ SUCCESS" if result.get('success') else "❌ FAILED"
+            status = "SUCCESS" if result.get('success') else "FAILED"
             logger.info(f"{complexity}: {status}")
             if result.get('metadata'):
                 logger.info(f"   Output: {result.get('output_dir')}")
             all_successful = all_successful and result.get('success', False)
         
         if all_successful:
-            logger.info("\n✅ All datasets generated successfully!")
+            logger.info("\nAll datasets generated successfully!")
         else:
-            logger.error("\n❌ Some datasets failed to generate")
+            logger.error("\nSome datasets failed to generate")
             sys.exit(1)
     
     else:
@@ -198,13 +198,13 @@ Examples:
         )
         
         if success:
-            logger.info(f"✅ Dataset generated successfully in {args.output_dir}")
+            logger.info(f"Dataset generated successfully in {args.output_dir}")
             if metadata:
                 data_files = metadata.get('data_files', [])
                 net_files = metadata.get('network_files', [])
                 logger.info(f"   Generated {len(data_files)} data files and {len(net_files)} network files")
         else:
-            logger.error("❌ Failed to generate dataset")
+            logger.error("Failed to generate dataset")
             sys.exit(1)
 
 if __name__ == "__main__":
