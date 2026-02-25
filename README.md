@@ -13,53 +13,78 @@ A modular, reproducible pipeline for Gene Regulatory Network inference using XGB
 
 ### Option 1: Using Conda (Recommended)
 1. Clone the repository:
-git clone <repository-url>
-cd grn_inference_pipeline
+```bash
+git clone <https://github.com/Jubaer-Shondhi/grn-inference-pipeline>
+cd grn-inference-pipeline
+```
 
 2. Create and activate conda environment using environment.yml:
+```bash
 conda env create -f environment.yml
 conda activate grn-inference
+```
 
 3. Install the package:
+```bash
 pip install -e .
+```
 
 4. (Optional) For R data simulation:
+```
 Rscript r_scripts/install_dependencies.R
+```
 
 ### Option 2: Using pip
 1. Clone the repository:
-git clone <repository-url>
-cd grn_inference_pipeline
+```bash
+git clone <https://github.com/Jubaer-Shondhi/grn-inference-pipeline>
+cd grn-inference-pipeline
+```
 
 2. Create and activate virtual environment:
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 3. Install dependencies from requirements.txt:
+```bash
 pip install -r requirements.txt
+```
 
 4. Install the package in development mode:
+```bash
 pip install -e .
+```
 
 5. (Optional) For R data simulation:
+```
 Rscript r_scripts/install_dependencies.R
+```
 
 ## Usage
 
 ### 1. Generate Simulated Data (Optional)
 Create synthetic gene regulatory networks and expression data:
+```bash
 python scripts/generate_simulated_data.py --config configs/simulation_config.yaml
+```
 
 ### 2. Run GRN Inference Experiment
 Execute the main pipeline to infer gene regulatory networks:
+```bash
 python scripts/run_experiment.py
 
-# Or specify a custom config file
+
+### Or specify a custom config file
 python scripts/run_experiment.py --config configs/your_config.yaml
+```
 
 ### 3. Generate Plots and Tables
 After running the experiment, generate visualization plots and summary tables:
+```bash
 python scripts/generate_plots.py
+```
 
 The script generates:
 - Precision curves for all objectives
@@ -71,6 +96,7 @@ The script generates:
 All plots are saved in {results_dir}/figures/.
 
 ## Project Structure
+```
 ├── configs/                    # Configuration files (.yaml)
 │   ├── config.yaml             # Main configuration
 │   ├── objectives.yaml         # Objectives and distributions
@@ -98,12 +124,14 @@ All plots are saved in {results_dir}/figures/.
 │       ├── logger.py
 │       └── parallel.py
 ├── .gitignore
-├── environment.yml             
-├── requirements.txt            
-└── README.md                   
+├── environment.yml
+├── requirements.txt
+└── README.md
+```                  
 
 ## Output Structure
 After running the pipeline, results are organized as:
+```
 {results_dir}/
 ├── precision_metrics.csv           # All precision results
 ├── GRN_Inference_RESULTS.csv       # Raw results
@@ -113,6 +141,7 @@ After running the pipeline, results are organized as:
     ├── stages_1to3_configs.pdf
     ├── stage4_by_complexity.pdf
     └── top_objectives_bar.pdf
+```
 
 ## Configuration
 Edit configs/config.yaml to modify:
