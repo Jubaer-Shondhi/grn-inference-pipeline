@@ -14,7 +14,7 @@ A modular, reproducible pipeline for Gene Regulatory Network inference using XGB
 ### Option 1: Using Conda (Recommended)
 1. Clone the repository:
 ```bash
-git clone <https://github.com/Jubaer-Shondhi/grn-inference-pipeline>
+git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
 cd grn-inference-pipeline
 ```
 
@@ -37,7 +37,7 @@ Rscript r_scripts/install_dependencies.R
 ### Option 2: Using pip
 1. Clone the repository:
 ```bash
-git clone <https://github.com/Jubaer-Shondhi/grn-inference-pipeline>
+git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
 cd grn-inference-pipeline
 ```
 
