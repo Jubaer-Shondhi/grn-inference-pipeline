@@ -284,10 +284,17 @@ def save_results(metrics_collector, results_dir):
     if not metrics_collector:
         return
         
+    # Create the DataFrame once
     output_path = Path(results_dir) / "GRN_Inference_RESULTS.csv"
     df = pd.concat(metrics_collector, ignore_index=True)
+    
+    # Save to first file
     df.to_csv(output_path, index=False)
     logger.info(f"Results saved to {output_path}")
+    
+    precision_path = Path(results_dir) / "precision_metrics.csv"
+    df.to_csv(precision_path, index=False)
+    logger.info(f"Precision metrics saved to {precision_path}")
 
 def generate_summary_tables(metrics_collector, results_dir):
     """Generate and save summary tables."""
@@ -318,9 +325,6 @@ def generate_summary_tables(metrics_collector, results_dir):
                 .pivot(index='TopN', columns='objective_clean', values='Precision')
                 .sort_index(axis=1)
             )
-            
-            # Save to CSV
-            pivot.to_csv(results_dir / f"summary_{stage}.csv")
             
             # Print to console
             print(f"\n## {stage.upper()} – Mean Precision by Objective and Top-N")

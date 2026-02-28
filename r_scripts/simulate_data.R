@@ -11,13 +11,37 @@ suppressPackageStartupMessages({
   library(reticulate)
 })
 
+# # ============================================
+# # FIX: Set Python path for reticulate
+# # ============================================
+# Sys.setenv(PYTHON = "C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe")
+# Sys.setenv(RETICULATE_PYTHON = "C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe")
+# reticulate::use_python("C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe", required = TRUE)
+# cat("Python path:", reticulate::py_config()$python, "\n")
+
 # ============================================
-# FIX: Set Python path for reticulate
+# Set Python path for reticulate - DYNAMIC
 # ============================================
-Sys.setenv(PYTHON = "C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe")
-Sys.setenv(RETICULATE_PYTHON = "C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe")
-reticulate::use_python("C:/Users/Jubaer Shondhi/anaconda3/envs/grn_env/python.exe", required = TRUE)
-cat("Python path:", reticulate::py_config()$python, "\n")
+# Try to find Python in common locations
+python_paths <- c(
+  Sys.which("python"),                    # System Python
+  "python",                                # Default command
+  Sys.getenv("PYTHON"),                    # Environment variable
+  Sys.getenv("RETICULATE_PYTHON")          # Reticulate environment variable
+)
+
+python_paths <- python_paths[python_paths != ""]
+
+if (length(python_paths) > 0) {
+  # Use the first valid Python
+  python_path <- python_paths[1]
+  Sys.setenv(PYTHON = python_path)
+  Sys.setenv(RETICULATE_PYTHON = python_path)
+  reticulate::use_python(python_path, required = TRUE)
+  cat("Using Python:", python_path, "\n")
+} else {
+  cat("WARNING: No Python found. Using reticulate default.\n")
+}
 
 #' Subsample and sparsify a regulatory network
 #' 

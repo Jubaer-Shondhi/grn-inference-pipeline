@@ -1,14 +1,18 @@
 # Base paths
+#paths:
+#  base_data: "E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen/R_Sc"
+#  results_dir: "E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen"
+
 paths:
-  base_data: "E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen/R_Sc"
-  results_dir: "E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen"
+  base_data: "data"  
+  results_dir: "results"
   
 # Dataset configurations
 datasets:
   complexities:
-    5_sources: 4
-    10_sources: 4  
-    20_sources: 2
+    5_sources: 1
+    10_sources: 0  
+    20_sources: 0
   max_search_trials: 50
 
 # Model parameters

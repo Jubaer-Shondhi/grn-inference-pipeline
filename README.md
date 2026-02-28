@@ -64,24 +64,41 @@ Rscript r_scripts/install_dependencies.R
 
 ## Usage
 
-### 1. Generate Simulated Data (Optional)
-Create synthetic gene regulatory networks and expression data:
+### Data Options
+
+#### Option A: Use Provided Datasets (Quick Start)
+The repository includes example datasets in the `data/` folder for quick testing. **Each complexity folder contains 1 dataset**:
+**Note:** By default, the configuration is set to run only the **5_sources** dataset (1 dataset) for testing. This allows you to run the complete pipeline, to verify everything works.
+
+Run immediately:
+
+```bash
+python scripts/run_experiment.py
+python scripts/generate_plots.py
+```
+
+#### Option B: Generate and Use Simulated Data
+1. Generate new simulated data:
+
 ```bash
 python scripts/generate_simulated_data.py --config configs/simulation_config.yaml
 ```
 
-### 2. Run GRN Inference Experiment
-Execute the main pipeline to infer gene regulatory networks:
+2. Update config to use simulated data:
+   - Edit `configs/config.yaml`
+
+3. Run experiment on simulated data:
 ```bash
 python scripts/run_experiment.py
-
-
-### Or specify a custom config file
-python scripts/run_experiment.py --config configs/your_config.yaml
 ```
 
-### 3. Generate Plots and Tables
-After running the experiment, generate visualization plots and summary tables:
+```bash
+python scripts/generate_plots.py
+```
+
+### Generate Plots
+After running the experiment, generate visualization plots:
+
 ```bash
 python scripts/generate_plots.py
 ```
@@ -93,7 +110,14 @@ The script generates:
 - Stage 4 configurations by network complexity
 - Top objectives bar charts at key thresholds
 
-All plots are saved in {results_dir}/figures/.
+All plots are saved in `results/figures/`.
+
+### Custom Configuration
+To use a custom config file:
+
+```bash
+python scripts/run_experiment.py --config configs/your_config.yaml
+```
 
 ## Project Structure
 ```
@@ -101,9 +125,15 @@ All plots are saved in {results_dir}/figures/.
 │   ├── config.yaml             # Main configuration
 │   ├── objectives.yaml         # Objectives and distributions
 │   └── simulation_config.yaml   # Simulation parameters
+├── data/                       # Simulated/example datasets
+│   ├── 5_sources/
+│   ├── 10_sources/
+│   ├── 20_sources/
+│   └── simulated/ 
 ├── r_scripts/                  # R code for data simulation
 │   ├── install_dependencies.R
 │   └── simulate_data.R
+├── results/                    # Generated outputs (populated after running)
 ├── scripts/                    # Main executable scripts
 │   ├── generate_plots.py
 │   ├── generate_simulated_data.py
@@ -132,7 +162,7 @@ All plots are saved in {results_dir}/figures/.
 ## Output Structure
 After running the pipeline, results are organized as:
 ```
-{results_dir}/
+results/
 ├── precision_metrics.csv           # All precision results
 ├── GRN_Inference_RESULTS.csv       # Raw results
 └── figures/                        # Generated plots
@@ -141,6 +171,13 @@ After running the pipeline, results are organized as:
     ├── stages_1to3_configs.pdf
     ├── stage4_by_complexity.pdf
     └── top_objectives_bar.pdf
+```
+Simulated Datasets (after running `generate_simulated_data.py`)
+```
+data/simulated/
+├── 5_sources/      
+├── 10_sources/     
+└── 20_sources/   
 ```
 
 ## Configuration
@@ -166,4 +203,4 @@ Main Python packages:
 - pandas, numpy, scikit-learn
 - xgboost, xgboost-distribution
 - scanpy, matplotlib, seaborn
-- pyyaml, colorlog
+- pyyaml
