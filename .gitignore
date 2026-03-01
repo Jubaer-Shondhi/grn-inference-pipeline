@@ -12,7 +12,13 @@ venv/
 conda-env/
 *.egg-info/
 
-
+# Results
+results/
+*.csv
+*.pdf
+*.png
+*.tsv
+*.xlsx
 
 # Logs
 *.log
