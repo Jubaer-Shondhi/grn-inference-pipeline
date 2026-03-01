@@ -11,7 +11,42 @@ A modular, reproducible pipeline for Gene Regulatory Network inference using XGB
 
 ## Installation
 
-### Option 1: Using Conda (Recommended)
+### Option 1: Using pip
+1. Clone the repository:
+```bash
+git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
+cd grn-inference-pipeline
+```
+
+2. Create and activate virtual environment:
+
+Linux:
+```bash
+python -m venv venv
+source venv/bin/activate  
+```
+Windows (Gitbash)
+```bash
+python -m venv venv
+source venv/Scripts/activate
+```
+
+3. Install dependencies from requirements.txt:
+```bash
+pip install -r requirements.txt
+```
+
+4. Install the package in development mode:
+```bash
+pip install -e .
+```
+
+5. (Optional) For R data simulation:
+```
+Rscript r_scripts/install_dependencies.R
+```
+
+### Option 2: Using Conda
 1. Clone the repository:
 ```bash
 git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
@@ -30,34 +65,6 @@ pip install -e .
 ```
 
 4. (Optional) For R data simulation:
-```
-Rscript r_scripts/install_dependencies.R
-```
-
-### Option 2: Using pip
-1. Clone the repository:
-```bash
-git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
-cd grn-inference-pipeline
-```
-
-2. Create and activate virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies from requirements.txt:
-```bash
-pip install -r requirements.txt
-```
-
-4. Install the package in development mode:
-```bash
-pip install -e .
-```
-
-5. (Optional) For R data simulation:
 ```
 Rscript r_scripts/install_dependencies.R
 ```
@@ -134,6 +141,7 @@ python scripts/run_experiment.py --config configs/your_config.yaml
 │   ├── install_dependencies.R
 │   └── simulate_data.R
 ├── results/                    # Generated outputs (populated after running)
+│   └── .gitkeep                # (placeholder to keep empty folder in Git)
 ├── scripts/                    # Main executable scripts
 │   ├── generate_plots.py
 │   ├── generate_simulated_data.py
@@ -172,6 +180,8 @@ results/
     ├── stage4_by_complexity.pdf
     └── top_objectives_bar.pdf
 ```
+**Note:** The `.gitkeep` file is only to keep the empty folder in Git. It does not affect the pipeline and will remain after generating results.
+
 Simulated Datasets (after running `generate_simulated_data.py`)
 ```
 data/simulated/
