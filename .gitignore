@@ -13,7 +13,7 @@ conda-env/
 *.egg-info/
 
 # Results
-results/
+# results/
 *.csv
 *.pdf
 *.png

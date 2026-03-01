@@ -67,7 +67,7 @@ Rscript r_scripts/install_dependencies.R
 ### Data Options
 
 #### Option A: Use Provided Datasets (Quick Start)
-The repository includes example datasets in the `data/` folder for quick testing. **Each complexity folder contains 1 dataset**:
+The repository includes example datasets in the `data/` folder for testing. **Each complexity folder contains 1 dataset**:
 **Note:** By default, the configuration is set to run only the **5_sources** dataset (1 dataset) for testing. This allows you to run the complete pipeline, to verify everything works.
 
 Run immediately:
@@ -77,7 +77,7 @@ python scripts/run_experiment.py
 python scripts/generate_plots.py
 ```
 
-#### Option B: Generate and Use Simulated Data
+#### Option B: Generate and Use Simulated Data (Optional)
 1. Generate new simulated data:
 
 ```bash
