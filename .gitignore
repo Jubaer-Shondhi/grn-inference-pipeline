@@ -43,3 +43,8 @@ desktop.ini
 .Rproj.user
 .Rcache/
 omnipathr-log.txt
+
+# SimD
+r_scripts/
+data/simulated/
+simulation_*
