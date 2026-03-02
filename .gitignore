@@ -48,3 +48,4 @@ omnipathr-log.txt
 r_scripts/
 data/simulated/
 simulation_*
+scripts/generate_simulated_data.py
