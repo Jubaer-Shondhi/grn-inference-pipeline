@@ -71,25 +71,19 @@ All plots are saved in `results/figures/`.
 ├── configs/                    # Configuration files (.yaml)
 │   ├── config.yaml             # Main configuration
 │   ├── objectives.yaml         # Objectives and distributions
-│   └── simulation_config.yaml   # Simulation parameters
-├── data/                       # Simulated/example datasets
+├── data/                       # datasets
 │   ├── 5_sources/
 │   ├── 10_sources/
 │   ├── 20_sources/
-├── r_scripts/                  # R code for data simulation
-│   ├── install_dependencies.R
-│   └── simulate_data.R
 ├── results/                    # Generated outputs (populated after running)
 │   └── .gitkeep                # (placeholder to keep empty folder in Git)
 ├── scripts/                    # Main executable scripts
 │   ├── generate_plots.py
-│   ├── generate_simulated_data.py
 │   └── run_experiment.py
 ├── src/                        # Source code modules
 │   ├── data/
 │   │   ├── loader.py
 │   │   ├── preprocessor.py
-│   │   └── simulation_bridge.py
 │   ├── evaluation/
 │   │   └── metrics.py
 │   ├── models/
