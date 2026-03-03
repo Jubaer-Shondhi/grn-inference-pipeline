@@ -97,8 +97,9 @@ All plots are saved in `results/figures/`.
 │       └── parallel.py
 ├── .gitignore
 ├── environment.yml
-├── requirements.txt
-└── README.md
+├── pyproject.toml
+├── README.md
+└── requirements.txt
 ```                  
 
 ## Output Structure
@@ -118,7 +119,7 @@ results/
 
 ## Large-Scale Datasets (For more experiment)
 
-For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on FAUBOX.
+For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on google drive: https://drive.google.com/file/d/1ZYai7rdoWR_x1zHhZwLAdpdpvNCsLu_R/view?usp=sharing
 
 ### How to Use
 
