@@ -122,6 +122,35 @@ results/
 ```
 **Note:** The `.gitkeep` file is only to keep the empty folder in Git. It does not affect the pipeline and will remain after generating results.
 
+## Large-Scale Datasets (Optional)
+
+For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on FAUBOX.
+
+### How to Use
+
+1. **Download** the datasets from FAUBOX
+2. **Extract** to the `data/simulated/` folder:
+```bash
+# Create simulated folder if it doesn't exist
+mkdir -p data/simulated
+```
+
+3. **Uploaded** the datasets in data/simulated folder for 5, 10 and 20_sources.
+
+4. **Update** config to use the large datasets:
+
+```yaml
+# In configs/config.yaml
+paths:
+  base_data: "data/simulated"  # Change from "data" to "data/simulated"
+```
+5. **Run** the pipeline as usual:
+
+```bash
+python scripts/run_experiment.py
+python scripts/generate_plots.py
+```
+
 ## Configuration
 Edit configs/config.yaml to modify:
 - Data paths: Input data and output directories
