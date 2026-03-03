@@ -182,14 +182,6 @@ results/
 ```
 **Note:** The `.gitkeep` file is only to keep the empty folder in Git. It does not affect the pipeline and will remain after generating results.
 
-Simulated Datasets (after running `generate_simulated_data.py`)
-```
-data/simulated/
-├── 5_sources/      
-├── 10_sources/     
-└── 20_sources/   
-```
-
 ## Configuration
 Edit configs/config.yaml to modify:
 - Data paths: Input data and output directories
