@@ -199,7 +199,6 @@ Edit configs/config.yaml to modify:
 
 ## Requirements
 - Python: 3.10 or higher
-- R: 4.0 or higher (optional, for data simulation)
 - Operating System: Windows/Linux/macOS
 
 Main Python packages:
