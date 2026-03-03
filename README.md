@@ -131,6 +131,7 @@ mkdir -p data/simulated
 ```
 
 3. **Extract** the datasets into the simulated folder:
+
 Linux:
 ```
 # Extract contents into data/simulated/
