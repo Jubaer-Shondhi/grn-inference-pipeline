@@ -49,3 +49,4 @@ r_scripts/
 data/simulated/
 simulation_*
 scripts/generate_simulated_data.py
+configs/simulation_config.yaml
