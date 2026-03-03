@@ -135,6 +135,17 @@ For users who want to run experiments with larger datasets, I have pre-simulated
 mkdir -p data/simulated
 ```
 
+4. **Extract** datasets (example for 5_sources)
+Linux:
+```
+unzip 5_sources_datasets.zip -d data/simulated/5_sources/
+```
+
+Windows:
+```
+tar -xf 5_sources_datasets.zip -C data\simulated\5_sources\
+```
+
 3. **Uploaded** the datasets in data/simulated folder for 5, 10 and 20_sources. The structure should look like:
 ```
 data/simulated/
