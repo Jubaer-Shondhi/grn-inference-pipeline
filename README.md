@@ -22,7 +22,7 @@ cd grn-inference-pipeline
 
 Linux:
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  
 ```
 Windows (Gitbash)
@@ -76,7 +76,6 @@ All plots are saved in `results/figures/`.
 │   ├── 5_sources/
 │   ├── 10_sources/
 │   ├── 20_sources/
-│   └── simulated/ 
 ├── r_scripts/                  # R code for data simulation
 │   ├── install_dependencies.R
 │   └── simulate_data.R
