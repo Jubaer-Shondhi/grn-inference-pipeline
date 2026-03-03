@@ -34,6 +34,7 @@ source venv/Scripts/activate
 3. Install dependencies from requirements.txt:
 ```bash
 pip install -r requirements.txt
+pip install -e . 
 ```
 
 ## Usage
@@ -192,7 +193,6 @@ Edit configs/config.yaml to modify:
 
 ## Reproducibility
 - All parameters stored in YAML configuration files
-- R scripts for complete data simulation
 - Complete pipeline from data loading to visualization
 - Version-controlled with Git
 - Fixed random seeds for all stochastic processes
