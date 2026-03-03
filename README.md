@@ -122,54 +122,67 @@ results/
 ```
 **Note:** The `.gitkeep` file is only to keep the empty folder in Git. It does not affect the pipeline and will remain after generating results.
 
-## Large-Scale Datasets (Optional)
+## Large-Scale Datasets (For more experiment)
 
 For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on FAUBOX.
 
 ### How to Use
 
-1. **Download** the datasets from FAUBOX
-2. **Extract** to the `data/simulated/` folder:
+1. **Download** data.zip from FAUBOX
+2. **Create** `data/simulated/` folder:
 ```bash
+# Navigate to the project
+cd grn-inference-pipeline
 # Create simulated folder if it doesn't exist
 mkdir -p data/simulated
 ```
 
-4. **Extract** datasets (example for 5_sources)
+3. **Extract** the datasets into the simulated folder:
 Linux:
 ```
-unzip 5_sources_datasets.zip -d data/simulated/5_sources/
+# Extract contents into data/simulated/
+unzip data.zip -d data/simulated/
 ```
 
 Windows:
 ```
-tar -xf 5_sources_datasets.zip -C data\simulated\5_sources\
+# Extract contents into data/simulated/
+tar -xf data.zip -C data/simulated/
 ```
 
-3. **Uploaded** the datasets in data/simulated folder for 5, 10 and 20_sources. The structure should look like:
+4. **Uploaded** the datasets in data/simulated folder for 5, 10 and 20_sources. The structure should look like:
 ```
 data/simulated/
 ├── 5_sources/
 │   ├── data/
 │   │   ├── data_1.tsv
-│   │   ├── data_2.tsv
-│   │   └── ... (333 files)
+│   │   └── ...
 │   └── nets/
 │       ├── network_1.tsv
-│       ├── network_2.tsv
-│       └── ... (333 files)
+│       └── ...
 ├── 10_sources/
 └── 20_sources/
 ```
 
-4. **Update** config to use the large datasets:
+5. **Update** config to use the large datasets:
 
 ```yaml
 # In configs/config.yaml
 paths:
   base_data: "data/simulated"  # Change from "data" to "data/simulated"
 ```
-5. **Run** the pipeline as usual:
+6. **Configure** which dataset complexities to run, you can modify by yourself:
+```yaml
+# In configs/config.yaml
+datasets:
+  complexities:
+    5_sources: 4   # Use first 4 datasets for 5_sources
+    10_sources: 4  # Use first 4 datasets for 10_sources
+    20_sources: 2  # Use first 2 datasets for 20_sources
+  max_search_trials: 50
+```
+
+7. **Run** the pipeline as usual:
 
 ```bash
 python scripts/run_experiment.py
