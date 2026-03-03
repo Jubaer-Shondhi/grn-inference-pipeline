@@ -36,39 +36,6 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-4. Install the package in development mode:
-```bash
-pip install -e .
-```
-
-5. (Optional) For R data simulation:
-```
-Rscript r_scripts/install_dependencies.R
-```
-
-### Option 2: Using Conda
-1. Clone the repository:
-```bash
-git clone https://github.com/Jubaer-Shondhi/grn-inference-pipeline
-cd grn-inference-pipeline
-```
-
-2. Create and activate conda environment using environment.yml:
-```bash
-conda env create -f environment.yml
-conda activate grn-inference
-```
-
-3. Install the package:
-```bash
-pip install -e .
-```
-
-4. (Optional) For R data simulation:
-```
-Rscript r_scripts/install_dependencies.R
-```
-
 ## Usage
 
 ### Data Options
@@ -81,26 +48,6 @@ Run immediately:
 
 ```bash
 python scripts/run_experiment.py
-python scripts/generate_plots.py
-```
-
-#### Option B: Generate and Use Simulated Data (Optional)
-1. Generate new simulated data:
-
-```bash
-python scripts/generate_simulated_data.py --config configs/simulation_config.yaml
-```
-
-2. Update config to use simulated data:
-   - Edit `configs/config.yaml`
-
-3. Run experiment on simulated data:
-```bash
-python scripts/run_experiment.py
-```
-
-```bash
-python scripts/generate_plots.py
 ```
 
 ### Generate Plots
@@ -118,13 +65,6 @@ The script generates:
 - Top objectives bar charts at key thresholds
 
 All plots are saved in `results/figures/`.
-
-### Custom Configuration
-To use a custom config file:
-
-```bash
-python scripts/run_experiment.py --config configs/your_config.yaml
-```
 
 ## Project Structure
 ```
@@ -206,3 +146,4 @@ Main Python packages:
 - xgboost, xgboost-distribution
 - scanpy, matplotlib, seaborn
 - pyyaml
+
