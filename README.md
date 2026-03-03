@@ -193,7 +193,7 @@ Edit configs/config.yaml to modify:
 ## Reproducibility
 - All parameters stored in YAML configuration files
 - R scripts for complete data simulation
-- Full pipeline from data generation to visualization
+- Complete pipeline from data loading to visualization
 - Version-controlled with Git
 - Fixed random seeds for all stochastic processes
 
