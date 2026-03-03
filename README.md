@@ -104,8 +104,8 @@ All plots are saved in `results/figures/`.
 After running the pipeline, results are organized as:
 ```
 results/
-├── precision_metrics.csv           # All precision results
-├── GRN_Inference_RESULTS.csv       # Raw results
+├── precision_metrics.csv           
+├── GRN_Inference_RESULTS.csv       
 └── figures/                        # Generated plots
     ├── precision_curves.pdf
     ├── precision_curves_stagewise.pdf
