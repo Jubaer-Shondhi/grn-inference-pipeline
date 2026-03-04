@@ -119,34 +119,35 @@ results/
 
 ## Large-Scale Datasets (For more experiment)
 
-For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on google drive: https://drive.google.com/file/d/1ZYai7rdoWR_x1zHhZwLAdpdpvNCsLu_R/view?usp=sharing
+For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on Google Drive.
 
 ### How to Use
 
-1. **Download** data.zip from FAUBOX
-2. **Create** `data/simulated/` folder:
+1. **Download** `simulated.zip` to your project folder:
 ```bash
-# Navigate to the project
-cd grn-inference-pipeline
-# Create simulated folder if it doesn't exist
-mkdir -p data/simulated
+# Install gdown if needed
+pip install gdown
+   
+# Download directly to your project
+gdown --fuzzy "https://drive.google.com/file/d/1Em-t7wTsmqDHLDAWIpidKYtdS-8chFBj/view?usp=drive_link"
 ```
 
-3. **Extract** the datasets into the simulated folder:
+
+2. **Extract** the datasets into the simulated folder:
 
 Linux:
 ```
-# Extract contents into data/simulated/
-unzip data.zip -d data/simulated/
+# Extract contents
+unzip simulated.zip -d data/
 ```
 
 Windows:
 ```
-# Extract contents into data/simulated/
-tar -xf data.zip -C data/simulated/
+# Extract contents
+tar -xf simulated.zip -C data/
 ```
 
-4. **Uploaded** the datasets in data/simulated folder for 5, 10 and 20_sources. The structure should look like:
+3. **Verify** the datasets in data/simulated folder for 5, 10 and 20_sources. The structure should look like:
 ```
 data/simulated/
 ├── 5_sources/
@@ -160,25 +161,28 @@ data/simulated/
 └── 20_sources/
 ```
 
-5. **Update** config to use the large datasets:
+4. Manually edit configs/config.yaml to use the large datasets:
+Open `configs/config.yaml` in any text editor (nano, vim, VSCode, Notepad, etc.) and change:
 
 ```yaml
 # In configs/config.yaml
 paths:
   base_data: "data/simulated"  # Change from "data" to "data/simulated"
 ```
-6. **Configure** which dataset complexities to run, you can modify by yourself:
+5. **Configure** dataset complexities/counts manually to run by yourself:
+In the same file, adjust how many datasets to use:
+
 ```yaml
 # In configs/config.yaml
 datasets:
   complexities:
-    5_sources: 4   # Use first 4 datasets for 5_sources
-    10_sources: 4  # Use first 4 datasets for 10_sources
-    20_sources: 2  # Use first 2 datasets for 20_sources
+    5_sources: 2   # Use first 2 datasets for 5_sources
+    10_sources: 2  # Use first 2 datasets for 10_sources
+    20_sources: 1  # Use first 1 datasets for 20_sources
   max_search_trials: 50
 ```
 
-7. **Run** the pipeline as usual:
+6. **Run** the pipeline as usual:
 
 ```bash
 python scripts/run_experiment.py
