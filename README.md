@@ -204,7 +204,6 @@ python scripts/generate_plots.py
 Edit configs/config.yaml to modify:
 - Data paths: Input data and output directories
 - Model hyperparameters: Base parameters and grids
-- Pipeline settings: Batch size, workers, thresholds
 
 ## Reproducibility
 - All parameters stored in YAML configuration files
