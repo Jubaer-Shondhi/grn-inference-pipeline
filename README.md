@@ -25,6 +25,18 @@ Linux:
 python3 -m venv venv
 source venv/bin/activate  
 ```
+# If you get "No module named venv", first run:
+```
+sudo apt update
+sudo apt install python3-venv
+```
+
+Windows (Command Prompt):
+```bash
+python -m venv venv
+venv\Scripts\activate  
+```
+
 Windows (Gitbash)
 ```bash
 python -m venv venv
@@ -43,7 +55,7 @@ python -m pip install -e .
 
 #### Option A: Use Provided Datasets (Quick Start)
 The repository includes example datasets in the `data/` folder for testing. **Each complexity folder contains 1 dataset**:
-**Note:** By default, the configuration is set to run only the **5_sources** dataset (1 dataset) for testing. This allows you to run the complete pipeline, to verify everything works.
+**Note:** By default, the configuration is set to run only the **5_sources** dataset (1 dataset). This allows you to run the complete pipeline, to verify everything works.
 
 Run immediately:
 
@@ -119,7 +131,7 @@ results/
 
 ## Large-Scale Datasets (For more experiment)
 
-For users who want to run experiments with larger datasets, I have pre-simulated **1000 datasets** available on Google Drive.
+For users who want to run experiments with larger datasets, I have pre-simulated **approximately 1000 datasets** available on Google Drive.
 
 ### How to Use
 
@@ -176,10 +188,10 @@ In the same file, adjust how many datasets to use:
 # In configs/config.yaml
 datasets:
   complexities:
-    5_sources: 2   # Use first 2 datasets for 5_sources
-    10_sources: 2  # Use first 2 datasets for 10_sources
-    20_sources: 1  # Use first 1 datasets for 20_sources
-  max_search_trials: 50
+    5_sources: 2   # Use first 2 datasets for 5_sources (Update as your need)
+    10_sources: 2  # Use first 2 datasets for 10_sources (Update as your need)
+    20_sources: 1  # Use first 1 datasets for 20_sources (Update as your need)
+  max_search_trials: 50  # Must be ≥ your largest dataset number request per source like (e.g. 60 or 80)
 ```
 
 6. **Run** the pipeline as usual:
@@ -200,7 +212,6 @@ Edit configs/config.yaml to modify:
 - All parameters stored in YAML configuration files
 - Complete pipeline from data loading to visualization
 - Version-controlled with Git
-- Fixed random seeds for all stochastic processes
 
 ## Requirements
 - Python: 3.10 or higher

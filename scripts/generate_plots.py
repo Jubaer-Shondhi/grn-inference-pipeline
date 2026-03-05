@@ -68,7 +68,7 @@ def plot_precision_curves(df, figures_dir):
     # Save
     plt.savefig(figures_dir / 'precision_curves.pdf', dpi=300, bbox_inches='tight')
     # plt.savefig(figures_dir / 'precision_curves.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
 
 def plot_stagewise_curves(df, figures_dir):
@@ -112,7 +112,7 @@ def plot_stagewise_curves(df, figures_dir):
     # Save
     # plt.savefig(figures_dir / 'precision_curves_stagewise.png', dpi=300, bbox_inches='tight')
     plt.savefig(figures_dir / 'precision_curves_stagewise.pdf', dpi=300, bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
 
 def plot_stages_1to3_configs(df, figures_dir):
@@ -230,7 +230,7 @@ def plot_stages_1to3_configs(df, figures_dir):
     
     # Save
     plt.savefig(figures_dir / 'stages_1to3_configs.pdf', dpi=300, bbox_inches='tight', pad_inches=0)
-    plt.show()
+    # plt.show()
     plt.close()
     
     return best_single, best_pairs, best_triplets
@@ -276,7 +276,7 @@ def plot_stage4_by_complexity(df, figures_dir):
     
     # Save
     plt.savefig(figures_dir / 'stage4_by_complexity.pdf', dpi=300, bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
     
     # Print summary
@@ -317,55 +317,8 @@ def plot_top_objectives_bar(df, figures_dir):
     # Save
     plt.savefig(figures_dir / 'top_objectives_bar.pdf', dpi=300, bbox_inches='tight', pad_inches=0.02)
     # plt.savefig(figures_dir / 'top_objectives_bar.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
-
-# def main():
-#     parser = argparse.ArgumentParser(description='Generate plots from GRN results')
-#     parser.add_argument('--input_data', type=str, 
-#                        default="E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen",
-#                        help='Directory containing input results CSV')
-#     parser.add_argument('--output_dir', type=str,
-#                        default="E:/FAU_CSE_Masters/Semester-4/Projects/Bionets/My Report/Essen",
-#                        help='Directory to save figures')
-#     args = parser.parse_args()
-    
-#     # Setup paths
-#     input_dir = Path(args.input_data)
-#     output_dir = Path(args.output_dir)
-#     figures_dir = output_dir / 'figures'
-#     figures_dir.mkdir(parents=True, exist_ok=True)
-    
-#     # Load data from input directory
-#     results_file = input_dir / 'precision_metrics.csv'
-#     if not results_file.exists():
-#         results_file = input_dir / 'GRN_Inference_RESULTS.csv'
-    
-#     print(f"Loading data from: {results_file}")
-#     print(f"Saving figures to: {figures_dir}")
-#     df = load_and_prepare_data(results_file)
-    
-#     # Check mapping worked
-#     print("\nMapping check:")
-#     print(df[['objective_base', 'objective_clean']].drop_duplicates().sort_values('objective_clean'))
-    
-#     # Generate all plots (they will save to figures_dir)
-#     print("\n1. Generating precision curves...")
-#     plot_precision_curves(df, figures_dir)
-    
-#     print("\n2. Generating stage-wise curves...")
-#     plot_stagewise_curves(df, figures_dir)
-    
-#     print("\n3. Generating Stages 1-3 configs table...")
-#     best_single, best_pairs, best_triplets = plot_stages_1to3_configs(df, figures_dir)
-    
-#     print("\n4. Generating Stage 4 by complexity table...")
-#     stage4_data = plot_stage4_by_complexity(df, figures_dir)
-    
-#     print("\n5. Generating top objectives bar charts...")
-#     plot_top_objectives_bar(df, figures_dir)
-    
-#     print(f"\nAll plots saved to: {figures_dir}")
 
 def main():
     parser = argparse.ArgumentParser(description='Generate plots from GRN results')
