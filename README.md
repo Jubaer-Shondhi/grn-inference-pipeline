@@ -203,12 +203,12 @@ python scripts/generate_plots.py
 ## Configuration
 Edit configs/config.yaml to modify:
 - Data paths: Input data and output directories
-- Model hyperparameters: Base parameters and grids
+- Model hyperparameters: Base parameters
+- Pipeline settings: Batch size, thresholds
 
 ## Reproducibility
 - All parameters stored in YAML configuration files
 - Complete pipeline from data loading to visualization
-- Version-controlled with Git
 
 ## Requirements
 - Python: 3.10 or higher
