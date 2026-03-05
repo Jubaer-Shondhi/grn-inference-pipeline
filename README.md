@@ -192,6 +192,7 @@ datasets:
     20_sources: 1  # Use first 1 datasets for 20_sources (Update as your need)
   max_search_trials: 50  # Must be updated as per your largest dataset number request per source like (e.g. 60 or 80)
 ```
+When run, The pipeline reads datasets and automatically skips any missing indices and goes to next file.
 
 6. **Run** the pipeline as usual:
 
