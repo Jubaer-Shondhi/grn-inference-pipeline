@@ -190,7 +190,7 @@ datasets:
     5_sources: 2   # Use first 2 datasets for 5_sources (Update as your need)
     10_sources: 2  # Use first 2 datasets for 10_sources (Update as your need)
     20_sources: 1  # Use first 1 datasets for 20_sources (Update as your need)
-  max_search_trials: 50  # Must be ≥ your largest dataset number request per source like (e.g. 60 or 80)
+  max_search_trials: 50  # Must be updated as per your largest dataset number request per source like (e.g. 60 or 80)
 ```
 
 6. **Run** the pipeline as usual:
