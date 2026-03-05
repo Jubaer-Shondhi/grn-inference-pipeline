@@ -24,11 +24,10 @@ Linux:
 ```bash
 python3 -m venv venv
 source venv/bin/activate  
-```
+
 # If you get "No module named venv", first run:
-```
-sudo apt update
-sudo apt install python3-venv
+# sudo apt update
+# sudo apt install python3-venv
 ```
 
 Windows (Command Prompt):
@@ -53,7 +52,7 @@ python -m pip install -e .
 
 ### Data Options
 
-#### Option A: Use Provided Datasets (Quick Start)
+#### Use Provided Datasets (Quick Start)
 The repository includes example datasets in the `data/` folder for testing. **Each complexity folder contains 1 dataset**:
 **Note:** By default, the configuration is set to run only the **5_sources** dataset (1 dataset). This allows you to run the complete pipeline, to verify everything works.
 
@@ -131,7 +130,7 @@ results/
 
 ## Large-Scale Datasets (For more experiment)
 
-For users who want to run experiments with larger datasets, I have pre-simulated **approximately 1000 datasets** available on Google Drive.
+For users who want to run experiments with larger datasets, I have pre-simulated **approximately 1000 datasets** available on Google Drive (public access).
 
 ### How to Use
 
